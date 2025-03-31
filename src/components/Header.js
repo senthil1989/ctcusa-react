@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../img/logo.png';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -47,39 +48,48 @@ function Header() {
 			<section id="header">
 				<nav className="navbar navbar-expand-md navbar-light  p-0 bg-white" id="navbar_sticky">
 					<div className="container-xl">
-						<a className="p-0 navbar-brand fw-bold me-0  text-black" href="index.html">
-                            {/* <i
-								className="fa-solid fa-om me-1 col_oran"></i> Krishna <br/>
-							<span className="fw-normal font_14 text-muted">Mega Temple</span> */}
-                            <img src={logo} alt="abc" className="w-100 logo" />
-						</a>
+					<Link className="p-0 navbar-brand fw-bold me-0 text-black" to="/">
+              			<img src={logo} alt="abc" className="w-100 logo" />
+           			</Link>
 						<button className="navbar-toggler" type="button" data-bs-toggle="collapse"
 							data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 							aria-expanded="false" aria-label="Toggle navigation">
 							<span className="navbar-toggler-icon"></span>
 						</button>
 						<div className="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul className="navbar-nav mb-0 ms-auto">
-								<li className="nav-item">
-									<a className="nav-link active" aria-current="page" href="index.html">Home</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="about.html">About </a>
-								</li>
-                                <li className="nav-item">
-									<a className="nav-link" href="about.html">Events </a>
-								</li>
-                                <li className="nav-item">
-									<a className="nav-link" href="about.html">Leadership Team</a>
-								</li>
-                                <li className="nav-item">
-									<a className="nav-link" href="about.html">Membership </a>
-								</li>
-                                <li className="nav-item">
-									<a className="nav-link" href="about.html">Contact Us </a>
-								</li>
-							</ul>
-						</div>
+              <ul className="navbar-nav mb-0 ms-auto">
+                <li className="nav-item">
+                  <Link className="nav-link active" aria-current="page" to="/">
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/about">
+                    About
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/events">
+                    Events
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/leadership">
+                    Leadership Team
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/membership">
+                    Membership
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/contact">
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
+            </div>
 					</div>
 				</nav>
 			</section>
