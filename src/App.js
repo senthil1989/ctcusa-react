@@ -9,6 +9,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Leadership from './pages/LeaderShip';
 import Membership from './pages/Membership';
+import Events from './pages/Events';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/leadership" element={<Leadership />} />
       
       <Route path="/membership" element={<Membership/>} />
+      <Route path="/events" element={<Events />} />
     </Routes>
     <Footer />
     </Router>

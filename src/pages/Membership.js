@@ -1,9 +1,25 @@
-import React from "react";
+import React,{useState} from "react";
 
 function Membership() {
+
+  const [membershipType, setMembershipType] = useState(""); // State to track selected membership type
+
+  const handleMembershipChange = (event) => {
+    setMembershipType(event.target.value); // Update state when membership type changes
+  };
   return (
     <section id="donate_dt" className="p_4 pb-0 w-75 mx-auto">
       <div className="container-xl">
+      <div className="col-md-12">
+      <div className="row about_h2 mt-5">
+      <h1 className="mt-3 font_50">
+                  Membership
+                </h1>
+                <p className="mt-3 p-3">
+                  Dear Members of the Telugu Community,
+                </p>
+                </div>
+                </div>
         <div className="donate_dt1 row">
           <div className="col-md-8">
             <div className="donate_dt1l  p-4 border_1">
@@ -45,17 +61,39 @@ function Membership() {
   </div>
   <h5 className="mt-4">Membership Details</h5>
   <div className="donate_dt1l2i row mt-3">
-    <div className="col-md-6">
-      <div className="donate_dt1l2i1l">
-  <label htmlFor="membershipType">Membership Type</label>
-  <select class="form-select" id="membershipType" name="membershipType" required>
-  <option value="" disabled selected>Select your membership type</option>
-    <option value="basic">Basic</option>
-    <option value="premium">Premium</option>
-       </select>
-      </div>
-    </div>
-    
+  <div className="col-md-6">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="membershipType">Membership Type</label>
+                      <select
+                        className="form-select"
+                        id="membershipType"
+                        name="membershipType"
+                        required
+                        onChange={handleMembershipChange}
+                      >
+                        <option value="" disabled selected>
+                          Select your membership type
+                        </option>
+                        <option value="basic">CTCUS lifetime membership fee for Single/Family</option>
+                      </select>
+                    </div>
+                  </div>
+                  {membershipType && (
+                    <div className="col-md-6">
+                      <div className="donate_dt1l2i1l">
+                        <label htmlFor="membershipAmount">Amount</label>
+                        <input
+          className="form-control  border-0 bg_light font_14"
+          placeholder="100$"
+          type="text"
+          name="membershipAmount"
+          id="membershipAmount"
+          value={'100$'}
+          disabled
+        />
+                      </div>
+                    </div>
+                  )}
   </div>
   <h5 className="mt-4">Personal Info</h5>
   <div className="donate_dt1l2i1 row mt-3">
@@ -182,7 +220,7 @@ function Membership() {
       </div>
     </div>
   </div>
-  <h5 className="mt-4">Spouse Details (Optional)</h5>
+  {/* <h5 className="mt-4">Spouse Details (Optional)</h5>
   <div className="donate_dt1l2i1 row mt-3">
     <div className="col-md-6">
       <div className="donate_dt1l2i1l">
@@ -248,7 +286,7 @@ function Membership() {
         />
       </div>
     </div>
-  </div>
+  </div> */}
   <div className="donate_dt1l2i1 row mt-3">
     <div className="col-md-12">
       <div className="donate_dt1l2i1l">
@@ -260,6 +298,29 @@ function Membership() {
           id="message"
           rows="4"
         ></textarea>
+      <div className="col-md-12 member-term">
+      <div className="term-member">Terms and Condition</div>
+      <div class="form-check mt-3 font_14">
+      {/* <input class="form-check-input" type="checkbox" value=""/>
+      <label class="form-check-label" for="flexCheckDefault">
+      Save my name, email, and website in this browser for the next time I comment.
+      </label> */}
+      <ul class="mb-0 font_15">
+  <li class="mt-2 d-flex">
+    <i class="fa fa-circle font_8 me-1"></i> 
+    <span>By submitting this form, I confirm that I am over 18 years old and agree to the Terms &amp; Conditions of CTCUS.</span>
+  </li>
+  <li class="mt-2 d-flex">
+    <i class="fa fa-circle font_8 me-1"></i>
+    <span>Please be aware that the CTCUS Membership fee is non-refundable and non-negotiable. As a membership-based organization that does not sell physical products, all membership purchases are final. Once a membership is purchased, neither CTCUS nor our payment processing systems can issue a refund. Therefore, please ensure you make your purchase decision carefully.</span>
+  </li>
+  <li class="mt-2 d-flex">
+    <i class="fa fa-circle font_8 me-1"></i> 
+    <span>By submitting this form, you acknowledge and consent to the Bylaws of the CTCUS organization.</span>
+  </li>
+</ul>
+      </div>
+      </div>
         <h6 className="mb-0 mt-4 center_sm">
           <button type="submit" className="button">
             Submit

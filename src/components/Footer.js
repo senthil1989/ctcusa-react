@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../img/logo.png';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -13,13 +14,12 @@ function Footer() {
 								<h4 className="text-white mb-4">About Us</h4>
 								<p className="text-light">Connecticut Telugu Community of USA(CTCUS) is a non-profit organization formed in Connecticut USA to bring our Telugu communities abroad and in India closer. CTCUS aims preserving cultural values, supporting educational and social welfare, promoting economic growth, and building a global network of unity and support.  </p>
 								<ul className="mb-0 flex_box">
-									<li className="d-flex text-light"><span className="me-3"><i
-												className="fa fa-phone "></i></span> +123) 123 4567 890 </li>
-									<li className="d-flex text-light mt-3"><span className="me-3"><i
-												className="fa fa-envelope "></i></span> support@ctcus.org </li>
-									<li className="d-flex text-light mt-3"><span className="me-3"><i
-												className="fa fa-map-marker"></i></span> 13/D, Amet Street City
-										Tower, New York USA </li>
+									<li className="d-flex text-light"><a className="me-3" href="tel:+14757462197"><i
+												className="fa fa-phone "></i>+1 475 746 2197</a>  </li>
+									<li className="d-flex text-light mt-3"><a className="me-3"  href="mailto:support@ctcus.org"><i
+												className="fa fa-envelope "></i>support@ctcus.org</a>  </li>
+									<li className="d-flex text-light mt-3"><a className="me-3"><i
+												className="fa fa-map-marker"></i>497 High Ridge Rd, Stamford CT 06905, USA</a></li>
 								</ul>
 							</div>
 						</div>
@@ -28,20 +28,32 @@ function Footer() {
 								<h4 className="text-white mb-4">Information</h4>
 								<div className="row footer_3ism">
 									<h6 className="col-md-12 col-6"><i
-											className="fa fa-chevron-right me-1 font_13 align-middle"></i> <a
-											className="text-light a_tag" href="#"> About Us</a></h6>
+											className="fa fa-chevron-right me-1 font_13 align-middle"></i> 
+											<Link className="text-light a_tag" aria-current="page" to="/">
+											Home
+											</Link>
+											</h6>
 									<h6 className="col-md-12 col-6 mt-2"><i
-											className="fa fa-chevron-right me-1 font_13 align-middle"></i> <a
-											className="text-light a_tag" href="#"> Events</a></h6>
+											className="fa fa-chevron-right me-1 font_13 align-middle"></i> 
+											<Link className="text-light a_tag" aria-current="page" to="/about">
+											About Us
+											</Link>
+											</h6>
 									<h6 className="col-md-12 col-6 mt-2"><i
-											className="fa fa-chevron-right me-1 font_13 align-middle"></i> <a
-											className="text-light a_tag" href="#"> Leadership</a></h6>
+											className="fa fa-chevron-right me-1 font_13 align-middle"></i>
+											<Link className="text-light a_tag" aria-current="page" to="/events">
+											Events
+											</Link></h6>
 									<h6 className="col-md-12 col-6 mt-2"><i
-											className="fa fa-chevron-right me-1 font_13 align-middle"></i> <a
-											className="text-light a_tag" href="#"> Membership</a></h6>
+											className="fa fa-chevron-right me-1 font_13 align-middle"></i>
+											<Link className="text-light a_tag" aria-current="page" to="/leadership">
+											LeaderShip
+											</Link>
+											</h6>
 									<h6 className="col-md-12 col-6 mt-2 mb-0"><i
-											className="fa fa-chevron-right me-1 font_13 align-middle"></i> <a
-											className="text-light a_tag" href="#"> Contact Us</a></h6>
+											className="fa fa-chevron-right me-1 font_13 align-middle"></i> <Link className="text-light a_tag" aria-current="page" to="/contact">
+											Contact Us
+											</Link></h6>
 								</div>
 							</div>
 						</div>
@@ -118,7 +130,7 @@ function Footer() {
 						<div className="col-md-4 item-h-center">
 							<div className="footer_b1l ">
 								<p className="mb-0 text-light">© 2025 Connecticut Telugu Community. All Rights Reserved | Design by <a
-										className=" fw-bold" href="http://www.templateonweb.com">Senthilkumar S</a>
+										className=" fw-bold" href="https://myportfolio-f94da.web.app/">Senthilkumar S</a>
 								</p>
 							</div>
 						</div>
@@ -133,13 +145,11 @@ function Footer() {
 						<div className="col-md-4 item-h-center" style={{justifyContent: 'flex-end'}}>
 							<div className="footer_b1r text-end">
 								<ul className="mb-0">
-									<li className="d-inline-block"><a className="d-block text-center" href="#"><i
+									<li className="d-inline-block"><a className="d-block text-center"  href="https://www.facebook.com/people/Ctcus-Ctcus/pfbid0aDnKM73WrX7DxoAvyh7bBCVacqWD9oJAUCuQEG1eqNWZbSrLXrBPJEj5rE92MUKYl/"><i
 												className="fa-brands fa-facebook-f"></i></a></li>
-									<li className="d-inline-block ms-2"><a className="d-block text-center" href="#"><i
-												className="fa-brands fa-twitter"></i></a></li>
-									<li className="d-inline-block ms-2"><a className="d-block text-center" href="#"><i
-												className="fa-brands fa-pinterest"></i></a></li>
-									<li className="d-inline-block ms-2"><a className="d-block text-center" href="#"><i
+									<li className="d-inline-block ms-2"><a className="d-block text-center" href="https://chat.whatsapp.com/Ks3pkbPUmz1CPw3xprTTFK"> <i
+												className="fa-brands fa-whatsapp"></i> </a></li>
+									<li className="d-inline-block ms-2"><a className="d-block text-center" href="https://www.instagram.com/ctcusorg/?igsh=dnBzZzY0cWgzcnli#"><i
 												className="fa-brands fa-instagram"></i></a></li>
 								</ul>
 							</div>

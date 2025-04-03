@@ -1,7 +1,7 @@
 import React from 'react';
 import img3 from '../img/1003.jpg';
 import img2 from '../img/1002.jpg';
-import img1 from '../img/1001.png';
+import img1 from '../img/1001.jpg';
 
 function Slider() {
   return (
@@ -21,59 +21,43 @@ function Slider() {
 					<div className="carousel-inner">
 						<div className="carousel-item active">
 							<img src={img1} className="d-block w-100" alt="..."/>
-							{/* <div className="center_hm1 position-absolute">
-								<img src="img/43.png" alt="abc"/>
-							</div>
+							
 							<div className="carousel-caption carousel-caption1 d-md-block">
-								<h1 className="text-white text-uppercase font_50">God give us power to believe</h1>
-								<p className="mt-3 text-light">Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus?
-									Suscipit className corporis nostra rem quos voluptatibus habitant? Fames, vivamus minim
-									nemo enim, gravida lobortis quasi, eum.</p>
-								<ul className="mb-0 mt-4">
+								<h1 className="text-white text-uppercase font_50">Stronger Together</h1>
+								<p className="mt-3 text-light">We may have different religions, different languages, different colored skin, but we all belong to one human race.</p>
+								{/* <ul className="mb-0 mt-4">
 									<li className="d-inline-block"><a className="button_2" href="#">Buy Now <i
 												className="fa fa-arrow-right ms-1"></i></a></li>
 									<li className="d-inline-block ms-3"><a className="button_3" href="#">Live Stream <i
 												className="fa fa-arrow-right ms-1"></i></a></li>
-								</ul>
-							</div> */}
+								</ul> */}
+							</div>
 						</div>
 						<div className="carousel-item">
 							<img src={img2} className="d-block w-100" alt="..."/>
-							{/* <div className="center_hm1 position-absolute">
-								<img src="img/43.png" alt="abc"/>
-							</div>
-
-							<div className="carousel-caption carousel-caption2 d-md-block">
-								<h1 className="text-white text-uppercase font_50">alias veritatis nostrum iste sed </h1>
-								<p className="mt-3 text-light">Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus?
-									Suscipit className corporis nostra rem quos voluptatibus habitant? Fames, vivamus minim
-									nemo enim, gravida lobortis quasi, eum.</p>
-								<ul className="mb-0 mt-4">
+							<div className="carousel-caption carousel-caption1 d-md-block">
+								<h1 className="text-white text-uppercase font_50">Freedom for All</h1>
+								<p className="mt-3 text-light">Secularism is not an attack on religion; it is the guarantee of freedom for everyone</p>
+								{/* <ul className="mb-0 mt-4">
 									<li className="d-inline-block"><a className="button_2" href="#">Buy Now <i
 												className="fa fa-arrow-right ms-1"></i></a></li>
 									<li className="d-inline-block ms-3"><a className="button_3" href="#">Live Stream <i
 												className="fa fa-arrow-right ms-1"></i></a></li>
-								</ul>
-							</div> */}
+								</ul> */}
+							</div>
 						</div>
 						<div className="carousel-item">
 							<img src={img3} className="d-block w-100" alt="..."/>
-							{/* <div className="center_hm1 position-absolute">
-								<img src="img/43.png" alt="abc"/>
-							</div>
-
-							<div className="carousel-caption carousel-caption3 d-md-block">
-								<h1 className="text-white text-uppercase font_50">Lorem ipsum dolor sit, amet</h1>
-								<p className="mt-3 text-light">Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus?
-									Suscipit className corporis nostra rem quos voluptatibus habitant? Fames, vivamus minim
-									nemo enim, gravida lobortis quasi, eum.</p>
-								<ul className="mb-0 mt-4">
+							<div className="carousel-caption carousel-caption1 d-md-block">
+								<h1 className="text-white text-uppercase font_50">Compassion Unites Us </h1>
+								<p className="mt-3 text-light">No act of kindness, <br/>no matter how small, is ever wasted.</p>
+								{/* <ul className="mb-0 mt-4">
 									<li className="d-inline-block"><a className="button_2" href="#">Buy Now <i
 												className="fa fa-arrow-right ms-1"></i></a></li>
 									<li className="d-inline-block ms-3"><a className="button_3" href="#">Live Stream <i
 												className="fa fa-arrow-right ms-1"></i></a></li>
-								</ul>
-							</div> */}
+								</ul> */}
+							</div>
 						</div>
 					</div>
 					<button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"

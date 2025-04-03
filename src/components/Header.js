@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from '../img/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
+	const location = useLocation();
   return (
     <div className="main_1 position-absolute top-0 w-100">
 			<section id="top" className="pt-3 pb-3">
@@ -11,10 +12,10 @@ function Header() {
 						<div className="col-md-4">
 							<div className="top_1l">
 								<ul className="mb-0 font_14">
-									<li className="d-inline-block"><a className="text-white a_tag" href="#"><i
-												className="fa fa-phone me-1 col_oran"></i> +123) 123 4567 890</a></li>
-									<li className="d-inline-block ms-3"><a className="text-white a_tag" href="#"><i
-												className="fa fa-envelope me-1 col_oran"></i> support@ctcus.org</a></li>
+									<li className="d-inline-block"><a className="text-white a_tag"  href="tel:+14757462197"><i
+												className="fa fa-phone me-1 col_oran"></i> +1 475 746 2197</a></li>
+									<li className="d-inline-block ms-3"><a className="text-white a_tag"  href="mailto:support@ctcus.org"><i
+												className="fa fa-envelope me-1 col_oran"></i> support@ctcus.org</a></li> 
 								</ul>
 							</div>
 						</div>
@@ -34,8 +35,7 @@ function Header() {
 								<ul className="mb-0 fs-6">
 									<li className="d-inline-block"><a className="text-white fw-bold a_tag" target='blank' href="https://www.facebook.com/people/Ctcus-Ctcus/pfbid0aDnKM73WrX7DxoAvyh7bBCVacqWD9oJAUCuQEG1eqNWZbSrLXrBPJEj5rE92MUKYl/"> <i
 												className="fa-brands fa-facebook-f"></i> </a></li>
-									<li className="d-inline-block ms-2"><a className="text-white fw-bold a_tag" target='blank' href="https://www.instagram.com/ctcusorg/?igsh=dnBzZzY0cWgzcnli#
-"> <i
+									<li className="d-inline-block ms-2"><a className="text-white fw-bold a_tag" target='blank' href="https://www.instagram.com/ctcusorg/?igsh=dnBzZzY0cWgzcnli#"> <i
 												className="fa-brands fa-instagram"></i> </a></li>
 									<li className="d-inline-block ms-2"><a className="text-white fw-bold a_tag" href="https://chat.whatsapp.com/Ks3pkbPUmz1CPw3xprTTFK"> <i
 												className="fa-brands fa-whatsapp"></i> </a></li>
@@ -57,34 +57,53 @@ function Header() {
 							<span className="navbar-toggler-icon"></span>
 						</button>
 						<div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav mb-0 ms-auto">
+						<ul className="navbar-nav mb-0 ms-auto">
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/">
+                  <Link
+                    className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+                    aria-current="page"
+                    to="/"
+                  >
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about">
+                  <Link
+                    className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+                    to="/about"
+                  >
                     About
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/events">
+                  <Link
+                    className={`nav-link ${location.pathname === '/events' ? 'active' : ''}`}
+                    to="/events"
+                  >
                     Events
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/leadership">
+                  <Link
+                    className={`nav-link ${location.pathname === '/leadership' ? 'active' : ''}`}
+                    to="/leadership"
+                  >
                     Leadership Team
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/membership">
+                  <Link
+                    className={`nav-link ${location.pathname === '/membership' ? 'active' : ''}`}
+                    to="/membership"
+                  >
                     Membership
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/contact">
+                  <Link
+                    className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
+                    to="/contact"
+                  >
                     Contact Us
                   </Link>
                 </li>

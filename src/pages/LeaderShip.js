@@ -37,18 +37,18 @@ function Leadership() {
      <div class="team_1i">
 	   <div class="team_1i1 position-relative">
 	     <div class="team_1i1i text-center">
-	      <a href="#"><img src="img/23.jpg" class="rounded-circle" alt="abc" /></a>
+	      <a href="#"><img src="img/avatar.png" class="rounded-circle" alt="abc" /></a>
 	   </div>
 	   
 	   </div>
 	   <div class="team_1i2 text-center mt-3">
 	     <h6 class="col_oran">President</h6>
-		 <h4 class="mb-0"><a href="#">Lorem Amet</a></h4>
 	   </div>
 	 </div>
 	</div>
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
+		   <h4 class="mb-0"><a href="#">Anji Reddy Appireddyt</a></h4>
 			 <h5 class="mb-0 fs-6"><a href="blog_detail.html">Leads the overall direction and strategy of the community, ensuring the alignment of all initiatives with our mission and values.</a></h5>
 		   </div>
 		  </div>
@@ -59,18 +59,19 @@ function Leadership() {
      <div class="team_1i">
 	   <div class="team_1i1 position-relative">
 	     <div class="team_1i1i text-center">
-	      <a href="#"><img src="img/23.jpg" class="rounded-circle" alt="abc" /></a>
+	      <a href="#"><img src="img/avatar.png" class="rounded-circle" alt="abc" /></a>
 	   </div>
 	   
 	   </div>
 	   <div class="team_1i2 text-center mt-3">
 	     <h6 class="col_oran">Secretary</h6>
-		 <h4 class="mb-0"><a href="#">Lorem Amet</a></h4>
 	   </div>
 	 </div>
 	</div>
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
+		   <h4 class="mb-0"><a href="#">Anji Reddy Appireddy</a></h4>
+
 			 <h5 class="mb-0 fs-6"><a href="blog_detail.html">Manages the community’s internal communications, meeting agendas, and organizational documents.</a></h5>
 		   </div>
 		  </div>
@@ -80,18 +81,18 @@ function Leadership() {
      <div class="team_1i">
 	   <div class="team_1i1 position-relative">
 	     <div class="team_1i1i text-center">
-	      <a href="#"><img src="img/23.jpg" class="rounded-circle" alt="abc" /></a>
+	      <a href="#"><img src="img/avatar.png" class="rounded-circle" alt="abc" /></a>
 	   </div>
 	   
 	   </div>
 	   <div class="team_1i2 text-center mt-3">
 	     <h6 class="col_oran">Treasurer</h6>
-		 <h4 class="mb-0"><a href="#">Lorem Amet</a></h4>
 	   </div>
 	 </div>
 	</div>
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
+		   <h4 class="mb-0"><a href="#">Anji Reddy Appireddy</a></h4>
 			 <h5 class="mb-0 fs-6"><a href="blog_detail.html">Oversees financial planning, budgeting, and fundraising efforts to ensure the community’s financial health and sustainability.</a></h5>
 		   </div>
 		  </div>
@@ -101,18 +102,18 @@ function Leadership() {
      <div class="team_1i">
 	   <div class="team_1i1 position-relative">
 	     <div class="team_1i1i text-center">
-	      <a href="#"><img src="img/23.jpg" class="rounded-circle" alt="abc" /></a>
+	      <a href="#"><img src="img/avatar.png" class="rounded-circle" alt="abc" /></a>
 	   </div>
 	   
 	   </div>
 	   <div class="team_1i2 text-center mt-3">
 	     <h6 class="col_oran">Cultural Chair</h6>
-		 <h4 class="mb-0"><a href="#">Lorem Amet</a></h4>
 	   </div>
 	 </div>
 	</div>
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
+		   <h4 class="mb-0"><a href="#">Oblesh Jinka</a></h4>
 			 <h5 class="mb-0 fs-6"><a href="blog_detail.html">Leads initiatives to preserve and promote Telugu culture through events, festivals, and educational programs.</a></h5>
 		   </div>
 		  </div>
@@ -122,18 +123,20 @@ function Leadership() {
      <div class="team_1i">
 	   <div class="team_1i1 position-relative">
 	     <div class="team_1i1i text-center">
-	      <a href="#"><img src="img/23.jpg" class="rounded-circle" alt="abc" /></a>
+	      <a href="#"><img src="img/avatar.png" class="rounded-circle" alt="abc" /></a>
 	   </div>
 	   
 	   </div>
 	   <div class="team_1i2 text-center mt-3">
 	     <h6 class="col_oran">Youth Chair</h6>
-		 <h4 class="mb-0"><a href="#">Lorem Amet</a></h4>
+		 
 	   </div>
 	 </div>
 	</div>
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
+		   <h4 class="mb-0"><a href="#">Sainath Reddy Vemireddy
+		   </a></h4>
 			 <h5 class="mb-0 fs-6"><a href="blog_detail.html">Engages and empowers the younger generation, ensuring they remain connected to their roots while excelling in their personal and academic pursuits.</a></h5>
 		   </div>
 		  </div>
@@ -143,18 +146,19 @@ function Leadership() {
      <div class="team_1i">
 	   <div class="team_1i1 position-relative">
 	     <div class="team_1i1i text-center">
-	      <a href="#"><img src="img/23.jpg" class="rounded-circle" alt="abc" /></a>
+	      <a href="#"><img src="img/avatar.png" class="rounded-circle" alt="abc" /></a>
 	   </div>
 	   
 	   </div>
 	   <div class="team_1i2 text-center mt-3">
 	     <h6 class="col_oran">Technology Chair</h6>
-		 <h4 class="mb-0"><a href="#">Lorem Amet</a></h4>
 	   </div>
 	 </div>
 	</div>
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
+		   <h4 class="mb-0"><a href="#">Sainath Reddy Vemireddy</a></h4>
+
 			 <h5 class="mb-0 fs-6"><a href="blog_detail.html">Helps stay up-to-date with emerging technologies and potential risks to help the community grow while safeguarding its members and operations. </a></h5>
 		   </div>
 		  </div>
@@ -164,18 +168,18 @@ function Leadership() {
      <div class="team_1i">
 	   <div class="team_1i1 position-relative">
 	     <div class="team_1i1i text-center">
-	      <a href="#"><img src="img/23.jpg" class="rounded-circle" alt="abc" /></a>
+	      <a href="#"><img src="img/avatar.png" class="rounded-circle" alt="abc" /></a>
 	   </div>
 	   
 	   </div>
 	   <div class="team_1i2 text-center mt-3">
 	     <h6 class="col_oran">Compliance Chair</h6>
-		 <h4 class="mb-0"><a href="#">Lorem Amet</a></h4>
 	   </div>
 	 </div>
 	</div>
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
+		   <h4 class="mb-0"><a href="#">Venkat Vemulapally</a></h4>
 			 <h5 class="mb-0 fs-6"><a href="blog_detail.html">Plays a critical role in safeguarding the community’s reputation and legal standing. By ensuring adherence to legal, ethical, and organizational standards, this individual helps maintain the integrity and sustainability of the CTCUS for the benefit of all its members.</a></h5>
 		   </div>
 		  </div>

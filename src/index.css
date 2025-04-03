@@ -12,3 +12,120 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+.term-member{
+  font-weight: 700;
+  padding-top: 10px;
+}
+.member-term ul li{
+  font-size: 12.5px;
+  background: none;
+    padding: 0;
+     border-radius: none;
+     display: flex;
+      align-items: flex-start; /* Aligns items properly */
+      gap: 8px; /* Adds spacing between the icon and text */  
+}
+.member-term ul li i {
+  flex-shrink: 0; /* Prevents icon from shrinking */
+  margin-top: 5px; /* Aligns icon with the text properly */
+}
+.team_1i1i img{
+    width: 100%;
+    border: 2px solid var(--secondary-color)
+}
+.team_1i2 h6{
+    font-size: 1.2rem;
+    font-weight: 600;
+  
+}
+.blog_1r1ir{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    align-content: space-evenly;
+}
+.blog_1r1ir h4 a{
+   border-bottom: 1px solid #000;
+   padding-bottom: 10px;
+   display: inline;
+   color: var(--secondary-color);
+  }
+  .blog_1r1ir h5 a{
+    line-height: 2rem;
+   }
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+#center .carousel-inner {
+  height: 80vh; /* Adjust the height as needed (e.g., 50vh, 60vh) */
+  overflow: hidden;
+}
+
+#center .carousel-inner img {
+  height: 80vh; /* Ensure the images fill the container */
+  object-fit: cover; /* Maintain aspect ratio and crop excess */
+}
+.carousel-caption {
+  background: none !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10; /* Ensure it stays above other elements */
+  width: 100%; /* Optional: Adjust width if needed */
+  height: 25%;
+}
+
+
+.carousel-caption h1,
+.carousel-caption p {
+  margin: 0 auto;
+  max-width: 800px; /* Limit the width of the text */
+  animation: fadeIn 2s ease-in-out; /* Add text animation */
+  border: none;
+}
+
+.carousel-caption ul {
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out; /* Add animation to buttons */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+  .carousel-caption {
+    width: 60%; /* Adjust width for medium screens */
+  }
+}
+
+@media (min-width: 992px) {
+  .carousel-caption {
+    width: 50%; /* Adjust width for large screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-caption h1 {
+    font-size: 1.5rem; /* Smaller font size for small screens */
+  }
+
+  .carousel-caption p {
+    font-size: 1rem; /* Adjust paragraph font size */
+  }
+
+  .carousel-caption ul {
+    margin-top: 15px; /* Reduce margin for buttons */
+  }
+}
+
+
+.footer_1l li .me-3{
+  color: var(--white);
+}
+.footer_1l li i{
+  padding-right: 10px;
+}
