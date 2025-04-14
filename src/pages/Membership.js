@@ -1,8 +1,47 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 function Membership() {
-
   const [membershipType, setMembershipType] = useState(""); // State to track selected membership type
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    mobilePhone: "",
+    email: "",
+    addressLine1: "",
+    addressLine2: "",
+    city: "",
+    state: "",
+    zip: "",
+    message: "",
+  }
+  ); // State to track form data
+  const [status, setStatus] = useState("");
+  const scriptURL = "";
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Submitting...");
+
+    try {
+      let data ={...formData,membershipType,membershipAmount:"100$"}
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(data), // Include membership type and amount in the request body
+        mode: 'no-cors',  
+        headers: { "Content-Type": "application/json" }
+      });
+console.log("Response:", response);
+      const result = await response.text();
+      setStatus("Form submitted successfully!");
+      // setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error:", error);
+      setStatus("Submission failed. Try again.");
+    }
+  };
 
   const handleMembershipChange = (event) => {
     setMembershipType(event.target.value); // Update state when membership type changes
@@ -10,58 +49,62 @@ function Membership() {
   return (
     <section id="donate_dt" className="p_4 pb-0 w-75 mx-auto">
       <div className="container-xl">
-      <div className="col-md-12">
-      <div className="row about_h2 mt-5">
-      <h1 className="mt-3 font_50">
-                  Membership
-                </h1>
-                <p className="mt-3 p-3">
-                  Dear Members of the Telugu Community,
-                </p>
-                </div>
-                </div>
+        <div className="col-md-12">
+          <div className="row about_h2 mt-5">
+            <h1 className="mt-3 font_50">Membership</h1>
+            <p className="mt-3 p-3">Dear Members of the Telugu Community,</p>
+          </div>
+        </div>
         <div className="donate_dt1 row">
           <div className="col-md-8">
             <div className="donate_dt1l  p-4 border_1">
-              
-              <form className="donate_dt1l2 mt-3" onSubmit={(e) => e.preventDefault()}>
-  <h5 className="mt-4">Select Payment Method</h5>
-  <div className="donate_dt1l2i row mt-3">
-    <div className="col-md-6">
-      <div className="donate_dt1l2il">
-        <div className="form-check font_14">
-          <input
-            className="form-check-input"
-            type="radio"
-            name="paymentMethod"
-            id="flexRadioDefault2"
-            defaultChecked
-          />
-          <label className="form-check-label" htmlFor="flexRadioDefault2">
-            Default checked radio
-          </label>
-        </div>
-      </div>
-    </div>
-    <div className="col-md-6">
-      <div className="donate_dt1l2il">
-        <div className="form-check font_14">
-          <input
-            className="form-check-input"
-            type="radio"
-            name="paymentMethod"
-            id="flexRadioDefault1"
-          />
-          <label className="form-check-label" htmlFor="flexRadioDefault1">
-            Default radio
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h5 className="mt-4">Membership Details</h5>
-  <div className="donate_dt1l2i row mt-3">
-  <div className="col-md-6">
+              <form
+                className="donate_dt1l2 mt-3"
+                onSubmit={handleSubmit}
+                name="membershipForm"             >
+                <h5 className="mt-4">Select Payment Method</h5>
+                <div className="donate_dt1l2i row mt-3">
+                  <div className="col-md-6">
+                    <div className="donate_dt1l2il">
+                      <div className="form-check font_14">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="paymentMethod"
+                          id="flexRadioDefault2"
+                          defaultChecked
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="flexRadioDefault2"
+                        >
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="donate_dt1l2il">
+                      <div className="form-check font_14">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="paymentMethod"
+                          id="flexRadioDefault1"
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="flexRadioDefault1"
+                        >
+                          Default radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h5 className="mt-4">Membership Details</h5>
+                <div className="donate_dt1l2i row mt-3">
+                  <div className="col-md-6">
                     <div className="donate_dt1l2i1l">
                       <label htmlFor="membershipType">Membership Type</label>
                       <select
@@ -70,11 +113,14 @@ function Membership() {
                         name="membershipType"
                         required
                         onChange={handleMembershipChange}
+                        value={membershipType}
                       >
                         <option value="" disabled selected>
                           Select your membership type
                         </option>
-                        <option value="basic">CTCUS lifetime membership fee for Single/Family</option>
+                        <option value="basic">
+                          CTCUS lifetime membership fee for Single/Family
+                        </option>
                       </select>
                     </div>
                   </div>
@@ -83,144 +129,162 @@ function Membership() {
                       <div className="donate_dt1l2i1l">
                         <label htmlFor="membershipAmount">Amount</label>
                         <input
-          className="form-control  border-0 bg_light font_14"
-          placeholder="100$"
-          type="text"
-          name="membershipAmount"
-          id="membershipAmount"
-          value={'100$'}
-          disabled
-        />
+                          className="form-control  border-0 bg_light font_14"
+                          placeholder="100$"
+                          type="text"
+                          name="membershipAmount"
+                          id="membershipAmount"
+                          value={"100$"}
+                          disabled
+                        />
                       </div>
                     </div>
                   )}
-  </div>
-  <h5 className="mt-4">Personal Info</h5>
-  <div className="donate_dt1l2i1 row mt-3">
-    <div className="col-md-6">
-      <div className="donate_dt1l2i1l">
-        <label htmlFor="firstName">First Name *</label>
-        <input
-          className="form-control  border-0 bg_light font_14"
-          placeholder="Enter your first name"
-          type="text"
-          name="firstName"
-          id="firstName"
-          required
-        />
-      </div>
-    </div>
-    <div className="col-md-6">
-      <div className="donate_dt1l2i1l">
-        <label htmlFor="lastName">Last Name *</label>
-        <input
-          className="form-control  border-0 bg_light font_14"
-          placeholder="Enter your last name"
-          type="text"
-          name="lastName"
-          id="lastName"
-          required
-        />
-      </div>
-    </div>
-  </div>
-  <div className="donate_dt1l2i1 row mt-3">
-    <div className="col-md-6">
-      <div className="donate_dt1l2i1l">
-        <label htmlFor="mobilePhone">Mobile *</label>
-        <input
-          className="form-control  border-0 bg_light font_14"
-          placeholder="Enter your mobile number"
-          type="tel"
-          name="mobilePhone"
-          id="mobilePhone"
-          required
-        />
-      </div>
-    </div>
-    <div className="col-md-6">
-      <div className="donate_dt1l2i1l">
-        <label htmlFor="email">Email *</label>
-        <input
-          className="form-control  border-0 bg_light font_14"
-          placeholder="Enter your email address"
-          type="email"
-          name="email"
-          id="email"
-          required
-        />
-      </div>
-    </div>
-  </div>
-  <div className="donate_dt1l2i1 row mt-3">
-    <div className="col-md-6">
-      <div className="donate_dt1l2i1l">
-        <label htmlFor="addressLine1">Address Line 1 *</label>
-        <input
-          className="form-control  border-0 bg_light font_14"
-          placeholder="Enter your address line 1"
-          type="text"
-          name="addressLine1"
-          id="addressLine1"
-          required
-        />
-      </div>
-    </div>
-    <div className="col-md-6">
-      <div className="donate_dt1l2i1l">
-        <label htmlFor="addressLine2">Address Line 2</label>
-        <input
-          className="form-control  border-0 bg_light font_14"
-          placeholder="Enter your address line 2"
-          type="text"
-          name="addressLine2"
-          id="addressLine2"
-        />
-      </div>
-    </div>
-  </div>
-  <div className="donate_dt1l2i1 row mt-3">
-    <div className="col-md-4">
-      <div className="donate_dt1l2i1l">
-        <label htmlFor="city">City *</label>
-        <input
-          className="form-control  border-0 bg_light font_14"
-          placeholder="Enter the city"
-          type="text"
-          name="city"
-          id="city"
-          required
-        />
-      </div>
-    </div>
-    <div className="col-md-4">
-      <div className="donate_dt1l2i1l">
-        <label htmlFor="state">State *</label>
-        <input
-          className="form-control  border-0 bg_light font_14"
-          placeholder="Enter the state"
-          type="text"
-          name="state"
-          id="state"
-          required
-        />
-      </div>
-    </div>
-    <div className="col-md-4">
-      <div className="donate_dt1l2i1l">
-        <label htmlFor="zip">Zip *</label>
-        <input
-          className="form-control  border-0 bg_light font_14"
-          placeholder="Enter the zip code"
-          type="text"
-          name="zip"
-          id="zip"
-          required
-        />
-      </div>
-    </div>
-  </div>
-  {/* <h5 className="mt-4">Spouse Details (Optional)</h5>
+                </div>
+                <h5 className="mt-4">Personal Info</h5>
+                <div className="donate_dt1l2i1 row mt-3">
+                  <div className="col-md-6">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="firstName">First Name *</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter your first name"
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="lastName">Last Name *</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter your last name"
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="donate_dt1l2i1 row mt-3">
+                  <div className="col-md-6">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="mobilePhone">Mobile *</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter your mobile number"
+                        type="tel"
+                        name="mobilePhone"
+                        id="mobilePhone"
+                        value={formData.mobilePhone}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="email">Email *</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter your email address"
+                        type="email"
+                        name="email"
+                        id="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="donate_dt1l2i1 row mt-3">
+                  <div className="col-md-6">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="addressLine1">Address Line 1 *</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter your address line 1"
+                        type="text"
+                        name="addressLine1"
+                        id="addressLine1"
+                        value={formData.addressLine1}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="addressLine2">Address Line 2</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter your address line 2"
+                        type="text"
+                        name="addressLine2"
+                        value={formData.addressLine2}
+                        onChange={handleChange}
+                        id="addressLine2"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="donate_dt1l2i1 row mt-3">
+                  <div className="col-md-4">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="city">City *</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter the city"
+                        type="text"
+                        name="city"
+                        id="city"
+                        value={formData.city}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="state">State *</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter the state"
+                        type="text"
+                        name="state"
+                        id="state"
+                        value={formData.state}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="zip">Zip *</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter the zip code"
+                        type="text"
+                        name="zip"
+                        id="zip"
+                        value={formData.zip}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                {/* <h5 className="mt-4">Spouse Details (Optional)</h5>
   <div className="donate_dt1l2i1 row mt-3">
     <div className="col-md-6">
       <div className="donate_dt1l2i1l">
@@ -287,49 +351,67 @@ function Membership() {
       </div>
     </div>
   </div> */}
-  <div className="donate_dt1l2i1 row mt-3">
-    <div className="col-md-12">
-      <div className="donate_dt1l2i1l">
-        <label htmlFor="message">Write a Message</label>
-        <textarea
-          placeholder="Write a Message"
-          className="form-control  border-0 bg_light font_14 form_text"
-          name="message"
-          id="message"
-          rows="4"
-        ></textarea>
-      <div className="col-md-12 member-term">
-      <div className="term-member">Terms and Condition</div>
-      <div class="form-check mt-3 font_14">
-      {/* <input class="form-check-input" type="checkbox" value=""/>
+                <div className="donate_dt1l2i1 row mt-3">
+                  <div className="col-md-12">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="message">Write a Message</label>
+                      <textarea
+                        placeholder="Write a Message"
+                        className="form-control  border-0 bg_light font_14 form_text"
+                        name="message"
+                        id="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows="4"
+                      ></textarea>
+                      <div className="col-md-12 member-term">
+                        <div className="term-member">Terms and Condition</div>
+                        <div class="form-check mt-3 font_14">
+                          {/* <input class="form-check-input" type="checkbox" value=""/>
       <label class="form-check-label" for="flexCheckDefault">
       Save my name, email, and website in this browser for the next time I comment.
       </label> */}
-      <ul class="mb-0 font_15">
-  <li class="mt-2 d-flex">
-    <i class="fa fa-circle font_8 me-1"></i> 
-    <span>By submitting this form, I confirm that I am over 18 years old and agree to the Terms &amp; Conditions of CTCUS.</span>
-  </li>
-  <li class="mt-2 d-flex">
-    <i class="fa fa-circle font_8 me-1"></i>
-    <span>Please be aware that the CTCUS Membership fee is non-refundable and non-negotiable. As a membership-based organization that does not sell physical products, all membership purchases are final. Once a membership is purchased, neither CTCUS nor our payment processing systems can issue a refund. Therefore, please ensure you make your purchase decision carefully.</span>
-  </li>
-  <li class="mt-2 d-flex">
-    <i class="fa fa-circle font_8 me-1"></i> 
-    <span>By submitting this form, you acknowledge and consent to the Bylaws of the CTCUS organization.</span>
-  </li>
-</ul>
-      </div>
-      </div>
-        <h6 className="mb-0 mt-4 center_sm">
-          <button type="submit" className="button">
-            Submit
-          </button>
-        </h6>
-      </div>
-    </div>
-  </div>
-</form>
+                          <ul class="mb-0 font_15">
+                            <li class="mt-2 d-flex">
+                              <i class="fa fa-circle font_8 me-1"></i>
+                              <span>
+                                By submitting this form, I confirm that I am
+                                over 18 years old and agree to the Terms &amp;
+                                Conditions of CTCUS.
+                              </span>
+                            </li>
+                            <li class="mt-2 d-flex">
+                              <i class="fa fa-circle font_8 me-1"></i>
+                              <span>
+                                Please be aware that the CTCUS Membership fee is
+                                non-refundable and non-negotiable. As a
+                                membership-based organization that does not sell
+                                physical products, all membership purchases are
+                                final. Once a membership is purchased, neither
+                                CTCUS nor our payment processing systems can
+                                issue a refund. Therefore, please ensure you
+                                make your purchase decision carefully.
+                              </span>
+                            </li>
+                            <li class="mt-2 d-flex">
+                              <i class="fa fa-circle font_8 me-1"></i>
+                              <span>
+                                By submitting this form, you acknowledge and
+                                consent to the Bylaws of the CTCUS organization.
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <h6 className="mb-0 mt-4 center_sm">
+                        <button type="submit"  id="submit" className="button">
+                          Submit
+                        </button>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
           {/* <div className="col-md-4">
