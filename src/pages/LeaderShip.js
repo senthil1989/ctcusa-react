@@ -48,7 +48,7 @@ function Leadership() {
 	</div>
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
-		   <h4 class="mb-0"><a href="#">Anji Reddy Appireddyt</a></h4>
+		   <h4 class="mb-0"><a href="#">Anji Reddy Appireddy</a></h4>
 			 <h5 class="mb-0 fs-6"><a href="blog_detail.html">Leads the overall direction and strategy of the community, ensuring the alignment of all initiatives with our mission and values.</a></h5>
 		   </div>
 		  </div>

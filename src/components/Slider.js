@@ -23,8 +23,8 @@ function Slider() {
 							<img src={img1} className="d-block w-100" alt="..."/>
 							
 							<div className="carousel-caption carousel-caption1 d-md-block">
-								<h1 className="text-white text-uppercase font_50">Stronger Together</h1>
-								<p className="mt-3 text-light">We may have different religions, different languages, different colored skin, but we all belong to one human race.</p>
+							<h1 className="text-white text-uppercase font_50">Connecticut Telugu Community</h1>
+							{/* <p className="mt-3 text-light">We may have different religions, different languages, different colored skin, but we all belong to one human race.</p> */}
 								{/* <ul className="mb-0 mt-4">
 									<li className="d-inline-block"><a className="button_2" href="#">Buy Now <i
 												className="fa fa-arrow-right ms-1"></i></a></li>
@@ -34,10 +34,10 @@ function Slider() {
 							</div>
 						</div>
 						<div className="carousel-item">
-							<img src={img2} className="d-block w-100" alt="..."/>
+						<img src={img1} className="d-block w-100" alt="..." style={{transform: 'scaleX(-1)'}}/>
 							<div className="carousel-caption carousel-caption1 d-md-block">
-								<h1 className="text-white text-uppercase font_50">Freedom for All</h1>
-								<p className="mt-3 text-light">Secularism is not an attack on religion; it is the guarantee of freedom for everyone</p>
+							<h1 className="text-white text-uppercase font_50">Stronger Together</h1>
+							{/* <p className="mt-3 text-light">We may have different religions, different languages, different colored skin, but we all belong to one human race.</p> */}
 								{/* <ul className="mb-0 mt-4">
 									<li className="d-inline-block"><a className="button_2" href="#">Buy Now <i
 												className="fa fa-arrow-right ms-1"></i></a></li>
@@ -47,7 +47,7 @@ function Slider() {
 							</div>
 						</div>
 						<div className="carousel-item">
-							<img src={img3} className="d-block w-100" alt="..."/>
+						<img src={img1} className="d-block w-100" alt="..." style={{transform: 'scaleY(-1)'}}/>
 							<div className="carousel-caption carousel-caption1 d-md-block">
 								<h1 className="text-white text-uppercase font_50">Compassion Unites Us </h1>
 								<p className="mt-3 text-light">No act of kindness, <br/>no matter how small, is ever wasted.</p>

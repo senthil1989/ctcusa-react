@@ -9,6 +9,8 @@ function Membership() {
     email: "",
     addressLine1: "",
     addressLine2: "",
+    adults: "",
+    familyMembers: "",
     city: "",
     state: "",
     zip: "",
@@ -61,47 +63,7 @@ console.log("Response:", response);
               <form
                 className="donate_dt1l2 mt-3"
                 onSubmit={handleSubmit}
-                name="membershipForm"             >
-                <h5 className="mt-4">Select Payment Method</h5>
-                <div className="donate_dt1l2i row mt-3">
-                  <div className="col-md-6">
-                    <div className="donate_dt1l2il">
-                      <div className="form-check font_14">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="paymentMethod"
-                          id="flexRadioDefault2"
-                          defaultChecked
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="flexRadioDefault2"
-                        >
-                          Default checked radio
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="donate_dt1l2il">
-                      <div className="form-check font_14">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="paymentMethod"
-                          id="flexRadioDefault1"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="flexRadioDefault1"
-                        >
-                          Default radio
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                name="membershipForm"             >                
                 <h5 className="mt-4">Membership Details</h5>
                 <div className="donate_dt1l2i row mt-3">
                   <div className="col-md-6">
@@ -236,6 +198,39 @@ console.log("Response:", response);
                       />
                     </div>
                   </div>
+                </div>
+                <div className="donate_dt1l2i1 row mt-3">
+                  <div className="col-md-6">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="familyMembers">Number of Family Members</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter your first name"
+                        type="number"
+                        name="familyMembers"
+                        id="familyMembers"
+                        value={formData.familyMembers}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="donate_dt1l2i1l">
+                      <label htmlFor="adults">Number of Adults</label>
+                      <input
+                        className="form-control  border-0 bg_light font_14"
+                        placeholder="Enter your last name"
+                        type="number"
+                        name="adults"
+                        id="adults"
+                        value={formData.adults}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+                  
                 </div>
                 <div className="donate_dt1l2i1 row mt-3">
                   <div className="col-md-4">

@@ -1,5 +1,5 @@
 import React from "react";
-import img1 from "../img/2023_Events/img1.jpg";
+import eventImg from "../img/event1.jpeg";
 
 function Home() {
   return (
@@ -102,6 +102,27 @@ function Home() {
           </div>
         </div>
       </section>
+      <section id="about_h" className="p_4">
+        <div className="container-xl">
+          <div className="row about_h2 mt-5">
+            {/* <div className="col-md-5">
+		  <div className="about_h2l text-center float-end">
+            <h1 className="d-inline-block bg_blue text-white rounded-circle text-center">25<span className="fs-6">+</span> <br/> <span className="fs-6 fw-normal">Join Our temple</span></h1>
+		  </div>
+		</div> */}
+            <div className="col-md-12">
+              <div className="about_h2r">
+                <h1 className="mt-3 font_50">
+                  Upcoming Events
+                </h1>
+                <div className="about_h2ri row mt-4" style={{height:"500px", width:"400px"}}>
+                  <img src={eventImg} alt="Event" style={{height:"100%", width:"100%"}}/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="minist" className="p_4 bg-light">
         <div className="container-xl">
           <div className="donate_1 row mb-5">
@@ -110,7 +131,7 @@ function Home() {
                 <h1 className="mb-0 font_50 mt-3">Our Events</h1>
               </div>
             </div>
-            <div className="col-md-8">
+            {/* <div className="col-md-8">
               <div className="donate_1r text-end">
                 <ul className="nav nav-tabs mb-0">
                   <li className="nav-item d-inline-block">
@@ -168,7 +189,7 @@ function Home() {
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="minist_1 row">
             <div className="tab-content">
@@ -190,13 +211,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Lorem’s Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -215,13 +230,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Ipsum’s Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -240,13 +249,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Dolor’s Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -267,13 +270,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Web Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -292,13 +289,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Help Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -317,13 +308,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Event Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -344,13 +329,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Sed’s Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -369,13 +348,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Amet’s Ministry
-                          </a>
-                        </h4>
-                      </div>
+                     
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -394,13 +367,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Temple Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -424,13 +391,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Sed’s Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -449,13 +410,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Amet’s Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -474,13 +429,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Temple Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -504,13 +453,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Web Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -529,13 +472,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Help Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -554,13 +491,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Event Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -584,13 +515,7 @@ function Home() {
                         </div>
                       </div>
                       <div className="minist_1i2 position-absolute top-0 p-3"></div>
-                      <div className="minist_1i3  p-3 bg_back position-absolute  w-100">
-                        <h4>
-                          <a className="text-white a_tag" href="#">
-                            Lorem’s Ministry
-                          </a>
-                        </h4>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="col-md-4">

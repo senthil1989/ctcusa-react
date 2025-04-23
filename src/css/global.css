@@ -336,7 +336,7 @@ margin-left: 38px;
 }
 #header .nav-link{
 padding: 25px 15px;
-color: var(--white);
+color: var(--secondary-color);
 font-weight: bold;
 text-transform:uppercase;
 font-size:13px;
@@ -589,10 +589,18 @@ transition: all 0.8s;
 .form-control:focus{
   box-shadow:none;
  border-color:#efefef; 
+ border-radius:0;
  }
 .form-select:focus{
  box-shadow:none;
- border-color:#efefef;  
+ border-color:#efefef; 
+ border-radius:0; 
+ }
+ select{
+  border-radius: 0;
+ }
+ option{
+  border-radius: 0;
  }
 .form-control{
 border-color:#efefef;
@@ -604,12 +612,14 @@ font-size:14px;
 .form-select{
 border-color:#efefef;
 box-shadow:none; 
-border-radius:0;
+border-radius:none;
 height:50px;
 color:#777;
 font-size:14px;
  }
-
+.form-select option{
+   border-radius: 0;
+ }
 .shadow_box{
   box-shadow: -1px -3px 50px 0px rgb(53 82 99 / 9%);
  }

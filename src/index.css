@@ -61,12 +61,12 @@ code {
   margin-bottom: 30px;
 }
 #center .carousel-inner {
-  height: 80vh; /* Adjust the height as needed (e.g., 50vh, 60vh) */
+  height: 70vh; /* Adjust the height as needed (e.g., 50vh, 60vh) */
   overflow: hidden;
 }
 
 #center .carousel-inner img {
-  height: 80vh; /* Ensure the images fill the container */
+  height: 70vh; /* Ensure the images fill the container */
   object-fit: cover; /* Maintain aspect ratio and crop excess */
 }
 .carousel-caption {
