@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-
+import Modal from '../components/Modal'; 
 function Membership() {
+  const [isModalOpen, setModalOpen] = useState(false);
   const [membershipType, setMembershipType] = useState(""); // State to track selected membership type
   const [formData, setFormData] = useState({
     firstName: "",
@@ -18,25 +19,41 @@ function Membership() {
   }
   ); // State to track form data
   const [status, setStatus] = useState("");
-  const scriptURL = "";
+  const scriptURL = "https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbwdg8t0Mm2k-V8uzKdtTpw4Aa1o9SU2ws8mKUCIQcy9zJsHy8MhhQl-ONWz1cQ4YNn0/exec";
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Submitting...");
-
+    setStatus("Submitting");
+    setModalOpen(true);
+    let data ={...formData,membershipType,membershipAmount:"100$"}
+    // fetch(scriptURL, {
+    //   method: 'POST',
+    //   body: JSON.stringify(data),
+    //   headers: {
+    //     'Content-Type': 'text/plain;charset=utf-8',
+    //   }
+    // })
+    //   .then(res => res.text())
+    //   .then(response => {
+    //     console.log("success:", response);
+    //   }).catch(err => {
+    //     console.log("Error:" + err);
+    //   });
     try {
       let data ={...formData,membershipType,membershipAmount:"100$"}
       const response = await fetch(scriptURL, {
         method: "POST",
         body: JSON.stringify(data), // Include membership type and amount in the request body
-        mode: 'no-cors',  
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
       });
 console.log("Response:", response);
-      const result = await response.text();
+      // if (!response.ok && response.status !== 200) {
+      //   throw new Error("Network response was not ok"); 
+      // }
+      const result = await response.json();
       setStatus("Form submitted successfully!");
       // setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -92,11 +109,11 @@ console.log("Response:", response);
                         <label htmlFor="membershipAmount">Amount</label>
                         <input
                           className="form-control  border-0 bg_light font_14"
-                          placeholder="100$"
+                          placeholder="$100"
                           type="text"
                           name="membershipAmount"
                           id="membershipAmount"
-                          value={"100$"}
+                          value={"$100"}
                           disabled
                         />
                       </div>
@@ -409,52 +426,21 @@ console.log("Response:", response);
               </form>
             </div>
           </div>
-          {/* <div className="col-md-4">
-		   <div className="donate_dt1r">
-		     <div className="donate_dt1r1 p-3  border_1">
-			   <div className="donate_dt1r1i position-relative">
-			     <div className="donate_dt1r1i1">
-			        <div className="grid clearfix">
-			<figure className="effect-jazz mb-0">
-			<a href="#"><img src="img/6.jpg" className="w-100" alt="img25"/></a>
-			</figure>
-			</div>
-			 </div>
-			    <div className="donate_dt1r1i2 position-absolute">
-			      <span className="d-inline-block text-white bg_oran font_12 p-2 px-3">EDUCATION</span>
-			 </div>
-			 </div>
-			 <div className="donate_dt1r1io px-2 pt-3">
-			   <h5><a href="#">Educate children to get good life</a></h5>
-			   <p className="mb-0 mt-3">There are many variations of passages of Lorem Ipsum available</p>
-			 </div>
-			 </div>
-			  <div className="donate_dt1r2 p-3 bg_light border_1">
-			    <h6 className="text-center">46%</h6>
-				<div className="progress-bar mt-3">
-			<div className="progress" >
-			</div>
-		</div><h6 className="mb-0 mt-3">Raised: <span className="fw-bold">$1410</span> <span className="float-end">Goal: <span className="fw-bold">$2000</span></span></h6>
-			  </div>
-			  <div className="donate_dt1r3 mt-4 ">
-			   <h5 className="p-3 mb-0  text-white bg_oran">Organizer :</h5>
-			   <div className="bg_light donate_dt1r3i row mx-0 pt-4 pb-4">
-			     <div className="col-md-3">
-				   <div className="donate_dt1r3il">
-				     <img src="img/25.jpg" className="rounded-circle w-100" alt="abc"/>
-				   </div>
-				 </div>
-				 <div className="col-md-9">
-				   <div className="donate_dt1r3ir">
-				     <h5 className="fw-bold fs-6 mb-3">Lorem Amet</h5>
-					 <h6 className="font_14"><a href="#"><i className="fa fa-tag col_oran me-1 align-middle"></i> Medical</a></h6>
-					  <h6 className="font_14 mb-0"><a href="#"><i className="fa fa-tag col_oran me-1 align-middle"></i> New York, Usa</a></h6>
-				   </div>
-				 </div>
-			   </div>
-			  </div>
-		   </div>
-		 </div> */}
+          <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+            <div >
+            {
+              status === "Submitting" ? (
+                <div className="spinner-container">
+                <div class="loader"></div>
+                </div>
+              ) : (
+                <div className="text-center">
+                  <p>{status}</p>
+                </div>
+              )
+            }
+            </div>
+      </Modal>
         </div>
       </div>
     </section>
